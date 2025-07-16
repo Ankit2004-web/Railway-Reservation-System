@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Railway Reservation System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .admin-logout {
+            cursor: pointer;
+            color: var(--danger-color);
+            font-weight: 500;
+        }
+
+        .train-form {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .train-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .train-table th,
+        .train-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .train-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .train-table tr:nth-child(even) {
+            background-color: var(--secondary-color);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .btn-edit {
+            background-color: #f0ad4e;
+        }
+
+        .btn-delete {
+            background-color: #d9534f;
+        }
+
+        #edit-train-container {
+            display: none;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-train"></i> RailLink</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Main Website</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="admin-header">
+                <h2>Train Management</h2>
+                <span class="admin-logout" id="admin-logout"><i class="fas fa-sign-out-alt"></i> Logout</span>
+            </div>
+
+            <!-- Add Train Form -->
+            <div id="add-train-container">
+                <h3>Add New Train</h3>
+                <form id="add-train-form" class="train-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="trainNumber">Train Number</label>
+                            <input type="text" id="trainNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="trainName">Train Name</label>
+                            <input type="text" id="trainName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="source">Source</label>
+                            <input type="text" id="source" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input type="text" id="destination" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departureTime">Departure Time</label>
+                            <input type="text" id="departureTime" placeholder="HH:MM" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="arrivalTime">Arrival Time</label>
+                            <input type="text" id="arrivalTime" placeholder="HH:MM" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration</label>
+                            <input type="text" id="duration" placeholder="XhYm" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="distance">Distance (km)</label>
+                            <input type="number" id="distance" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="availableSeats">Available Seats</label>
+                            <input type="number" id="availableSeats" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price (₹)</label>
+                            <input type="number" id="price" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </div>
+
+                    <div id="add-train-error" class="error-message"></div>
+                    <button type="submit" class="btn">Add Train</button>
+                </form>
+            </div>
+
+            <!-- Edit Train Form (Initially Hidden) -->
+            <div id="edit-train-container">
+                <h3>Edit Train</h3>
+                <form id="edit-train-form" class="train-form">
+                    <input type="hidden" id="edit-trainId">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-trainNumber">Train Number</label>
+                            <input type="text" id="edit-trainNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-trainName">Train Name</label>
+                            <input type="text" id="edit-trainName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-source">Source</label>
+                            <input type="text" id="edit-source" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-destination">Destination</label>
+                            <input type="text" id="edit-destination" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-departureTime">Departure Time</label>
+                            <input type="text" id="edit-departureTime" placeholder="HH:MM" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-arrivalTime">Arrival Time</label>
+                            <input type="text" id="edit-arrivalTime" placeholder="HH:MM" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-duration">Duration</label>
+                            <input type="text" id="edit-duration" placeholder="XhYm" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-distance">Distance (km)</label>
+                            <input type="number" id="edit-distance" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-availableSeats">Available Seats</label>
+                            <input type="number" id="edit-availableSeats" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-price">Price (₹)</label>
+                            <input type="number" id="edit-price" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-date">Date</label>
+                            <input type="date" id="edit-date" required>
+                        </div>
+                    </div>
+
+                    <div id="edit-train-error" class="error-message"></div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn">Update Train</button>
+                        <button type="button" class="btn" id="cancel-edit">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Trains Table -->
+            <div id="trains-container">
+                <h3>All Trains</h3>
+                <table class="train-table">
+                    <thead>
+                        <tr>
+                            <th>Train No.</th>
+                            <th>Name</th>
+                            <th>Route</th>
+                            <th>Date</th>
+                            <th>Departure</th>
+                            <th>Seats</th>
+                            <th>Price (₹)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="trains-list">
+                        <!-- Train rows will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 RailBooker. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check admin access
+            if (!localStorage.getItem('adminAccess')) {
+                window.location.href = 'adminLogin.html';
+                return;
+            }
+
+            // DOM Elements
+            const addTrainForm = document.getElementById('add-train-form');
+            const editTrainForm = document.getElementById('edit-train-form');
+            const editTrainContainer = document.getElementById('edit-train-container');
+            const cancelEditBtn = document.getElementById('cancel-edit');
+            const trainsList = document.getElementById('trains-list');
+            const logoutBtn = document.getElementById('admin-logout');
+
+            // API URL
+            const API_URL = '/api';
+
+            // Logout handler
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('adminAccess');
+                window.location.href = 'adminLogin.html';
+            });
+
+            // Cancel edit handler
+            cancelEditBtn.addEventListener('click', () => {
+                editTrainContainer.style.display = 'none';
+            });
+
+            // Add train form submit
+            addTrainForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const trainData = {
+                    trainNumber: document.getElementById('trainNumber').value,
+                    trainName: document.getElementById('trainName').value,
+                    source: document.getElementById('source').value,
+                    destination: document.getElementById('destination').value,
+                    departureTime: document.getElementById('departureTime').value,
+                    arrivalTime: document.getElementById('arrivalTime').value,
+                    duration: document.getElementById('duration').value,
+                    distance: parseInt(document.getElementById('distance').value),
+                    availableSeats: parseInt(document.getElementById('availableSeats').value),
+                    price: parseInt(document.getElementById('price').value),
+                    date: document.getElementById('date').value
+                };
+
+                try {
+                    const response = await fetch(`${API_URL}/trains`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(trainData)
+                    });
+
+                    if (response.ok) {
+                        alert('Train added successfully');
+                        addTrainForm.reset();
+                        loadTrains();
+                    } else {
+                        const error = await response.json();
+                        document.getElementById('add-train-error').textContent = error.msg || 'Error adding train';
+                    }
+                } catch (error) {
+                    console.error('Error adding train:', error);
+                    document.getElementById('add-train-error').textContent = 'Error adding train';
+                }
+            });
+
+            // Edit train form submit
+            editTrainForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const trainId = document.getElementById('edit-trainId').value;
+
+                const trainData = {
+                    trainNumber: document.getElementById('edit-trainNumber').value,
+                    trainName: document.getElementById('edit-trainName').value,
+                    source: document.getElementById('edit-source').value,
+                    destination: document.getElementById('edit-destination').value,
+                    departureTime: document.getElementById('edit-departureTime').value,
+                    arrivalTime: document.getElementById('edit-arrivalTime').value,
+                    duration: document.getElementById('edit-duration').value,
+                    distance: parseInt(document.getElementById('edit-distance').value),
+                    availableSeats: parseInt(document.getElementById('edit-availableSeats').value),
+                    price: parseInt(document.getElementById('edit-price').value),
+                    date: document.getElementById('edit-date').value
+                };
+
+                try {
+                    const response = await fetch(`${API_URL}/trains/${trainId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(trainData)
+                    });
+
+                    if (response.ok) {
+                        alert('Train updated successfully');
+                        editTrainContainer.style.display = 'none';
+                        loadTrains();
+                    } else {
+                        const error = await response.json();
+                        document.getElementById('edit-train-error').textContent = error.msg || 'Error updating train';
+                    }
+                } catch (error) {
+                    console.error('Error updating train:', error);
+                    document.getElementById('edit-train-error').textContent = 'Error updating train';
+                }
+            });
+
+            // Load trains
+            async function loadTrains() {
+                try {
+                    const response = await fetch(`${API_URL}/trains`);
+
+                    if (response.ok) {
+                        const trains = await response.json();
+                        displayTrains(trains);
+                    } else {
+                        alert('Error loading trains');
+                    }
+                } catch (error) {
+                    console.error('Error loading trains:', error);
+                    alert('Error loading trains');
+                }
+            }
+
+            // Display trains in table
+            function displayTrains(trains) {
+                trainsList.innerHTML = '';
+
+                if (trains.length === 0) {
+                    trainsList.innerHTML = '<tr><td colspan="8">No trains available</td></tr>';
+                    return;
+                }
+
+                trains.forEach(train => {
+                    const row = document.createElement('tr');
+
+                    const formattedDate = new Date(train.date).toLocaleDateString();
+
+                    row.innerHTML = `
+            <td>${train.trainNumber}</td>
+            <td>${train.trainName}</td>
+            <td>${train.source} to ${train.destination}</td>
+            <td>${formattedDate}</td>
+            <td>${train.departureTime}</td>
+            <td>${train.availableSeats}</td>
+            <td>${train.price}</td>
+            <td class="action-buttons">
+              <button class="btn btn-small btn-edit" data-id="${train._id}">Edit</button>
+              <button class="btn btn-small btn-delete" data-id="${train._id}">Delete</button>
+            </td>
+          `;
+
+                    trainsList.appendChild(row);
+
+                    // Add event listeners to buttons
+                    row.querySelector('.btn-edit').addEventListener('click', () => {
+                        openEditForm(train);
+                    });
+
+                    row.querySelector('.btn-delete').addEventListener('click', () => {
+                        if (confirm(`Are you sure you want to delete train ${train.trainNumber}?`)) {
+                            deleteTrain(train._id);
+                        }
+                    });
+                });
+            }
+
+            // Open edit form with train data
+            function openEditForm(train) {
+                // Fill form with train data
+                document.getElementById('edit-trainId').value = train._id;
+                document.getElementById('edit-trainNumber').value = train.trainNumber;
+                document.getElementById('edit-trainName').value = train.trainName;
+                document.getElementById('edit-source').value = train.source;
+                document.getElementById('edit-destination').value = train.destination;
+                document.getElementById('edit-departureTime').value = train.departureTime;
+                document.getElementById('edit-arrivalTime').value = train.arrivalTime;
+                document.getElementById('edit-duration').value = train.duration;
+                document.getElementById('edit-distance').value = train.distance;
+                document.getElementById('edit-availableSeats').value = train.availableSeats;
+                document.getElementById('edit-price').value = train.price;
+
+                // Format date for input
+                const dateObj = new Date(train.date);
+                const formattedDate = dateObj.toISOString().split('T')[0];
+                document.getElementById('edit-date').value = formattedDate;
+
+                // Show edit form
+                editTrainContainer.style.display = 'block';
+
+                // Scroll to edit form
+                editTrainContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // Delete train
+            async function deleteTrain(trainId) {
+                try {
+                    const response = await fetch(`${API_URL}/trains/${trainId}`, {
+                        method: 'DELETE'
+                    });
+
+                    if (response.ok) {
+                        alert('Train deleted successfully');
+                        loadTrains();
+                    } else {
+                        alert('Error deleting train');
+                    }
+                } catch (error) {
+                    console.error('Error deleting train:', error);
+                    alert('Error deleting train');
+                }
+            }
+
+            // Set today's date as default in the date field
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').value = today;
+
+            // Initial load of trains
+            loadTrains();
+        });
+    </script>
+</body>
+
+</html>
