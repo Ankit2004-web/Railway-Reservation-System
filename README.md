@@ -1,5 +1,7 @@
 # RailYatra
 
+**Repository:** [github.com/Ankit2004-web/RailYatra](https://github.com/Ankit2004-web/RailYatra)
+
 **RailYatra** (*rail journey* in Hindi) — a production-ready Indian railway reservation platform with separated **React frontend** and **Node.js backend**, powered by **Microsoft SQL Server**.
 
 ## Project Structure
