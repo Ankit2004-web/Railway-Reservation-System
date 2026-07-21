@@ -1,8 +1,17 @@
 # RailYatra
 
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoft-sql-server&logoColor=white)](https://www.microsoft.com/sql-server)
+
 **Repository:** [github.com/Ankit2004-web/RailYatra](https://github.com/Ankit2004-web/RailYatra)
 
+**Suggested GitHub topics:** `react` · `reactjs` · `vite` · `nodejs` · `express` · `sql-server` · `indian-railways`
+
 **RailYatra** (*rail journey* in Hindi) — a production-ready Indian railway reservation platform with separated **React frontend** and **Node.js backend**, powered by **Microsoft SQL Server**.
+
+> **Note:** GitHub’s language bar counts `.jsx` / `.js` files as **JavaScript** (React is a JS library, not a separate language). Use the badges and topics above to highlight React on the repo page.
 
 ## Project Structure
 

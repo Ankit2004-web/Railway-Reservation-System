@@ -1,2 +1,12 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# GitHub language stats (Linguist): React/.jsx files are classified as JavaScript — there is no
+# separate "React" language on GitHub. Exclude legacy + data folders so stats reflect the app stack.
+/frontend/** linguist-vendored
+/data/** linguist-vendored
+/docs/** linguist-documentation
+*.md linguist-documentation
+
+# Primary UI lives in client/ (React 19 + Vite)
+client/src/**/*.jsx linguist-language=JSX
