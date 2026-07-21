@@ -1,0 +1,44 @@
+{
+    "name": "railway-reservation-backend",
+    "version": "1.0.0",
+    "description": "Railway Reservation System API with SQL Server",
+    "main": "server.js",
+    "scripts": {
+        "start": "node ../scripts/start.js",
+        "dev": "nodemon server.js",
+        "db:sync": "node ../scripts/run.js ../database/sync.js",
+        "db:seed": "node ../scripts/run.js ../database/seed.js",
+        "db:setup": "node ../scripts/run.js ../database/sync.js && node ../scripts/run.js ../database/seed.js",
+        "db:migrate-master": "node ../scripts/run.js ../database/migrate-master-data.js",
+        "db:backfill-running-days": "node ../scripts/run.js ../database/backfill-running-days.js",
+        "import:railway": "node ../scripts/run.js ../database/import/run-import.js",
+        "import:datameet": "node ../scripts/run.js ../database/import/run-datameet-import.js",
+        "download:railway": "powershell -ExecutionPolicy Bypass -File ../scripts/download-railway-data.ps1 -Target datameet",
+        "fix:driver": "npm install msnodesqlv8",
+        "test": "node ../scripts/run.js ../backend/tests/api.test.js && node ../scripts/run.js ../backend/tests/refund.test.js && node ../scripts/run.js ../backend/tests/runningDay.test.js && node ../scripts/run.js ../backend/tests/trainSearchLogic.test.js && node ../scripts/run.js ../backend/tests/csvParser.test.js && node ../scripts/run.js ../backend/tests/fare.test.js"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.18.2",
+        "express-rate-limit": "^7.5.0",
+        "express-validator": "^7.2.1",
+        "helmet": "^8.0.0",
+        "jsonwebtoken": "^9.0.2",
+        "msnodesqlv8": "^4.5.0",
+        "mssql": "^11.0.1",
+        "nodemailer": "^6.10.0",
+        "odbc": "^2.5.0",
+        "pdfkit": "^0.16.0",
+        "razorpay": "^2.9.8",
+        "winston": "^3.17.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1",
+        "supertest": "^7.0.0"
+    },
+    "overrides": {
+        "jwa": "^2.0.0"
+    }
+}

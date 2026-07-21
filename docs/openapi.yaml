@@ -1,0 +1,148 @@
+openapi: 3.0.3
+info:
+  title: Railway Reservation System API
+  version: 2.0.0
+  description: |
+    Node.js + SQL Server API for railway reservation management.
+    Master timetable data (Category A) is imported from authorized datasets.
+    Fares, availability, RAC/WL (Category B) are development simulations unless noted.
+servers:
+  - url: /api
+paths:
+  /health:
+    get:
+      summary: Health check
+      tags: [System]
+      responses:
+        '200':
+          description: OK
+  /stations/search:
+    get:
+      summary: Station autocomplete
+      tags: [Stations]
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Ranked station list (max 20)
+  /trains/search:
+    get:
+      summary: Train between stations (stop-graph search)
+      tags: [Trains]
+      parameters:
+        - { name: from, in: query, schema: { type: string }, description: Station code or name }
+        - { name: to, in: query, schema: { type: string } }
+        - { name: date, in: query, schema: { type: string, format: date } }
+        - { name: class, in: query, schema: { type: string } }
+        - { name: quota, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: Matching trains with segment times and day offsets
+  /trains/autocomplete:
+    get:
+      summary: Train number/name search
+      tags: [Trains]
+      parameters:
+        - { name: q, in: query, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Train suggestions
+  /trains/{id}:
+    get:
+      summary: Train details (summary, no full route)
+      tags: [Trains]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        '200':
+          description: Train summary with classes and running days
+        '404':
+          description: Not found
+  /trains/{id}/route:
+    get:
+      summary: Ordered train route with day offsets
+      tags: [Trains]
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: integer } }
+      responses:
+        '200':
+          description: Stops sorted by stopSequence
+  /fares/estimate:
+    get:
+      summary: Development fare estimate (NOT official IR fares)
+      tags: [Fares]
+      parameters:
+        - { name: trainId, in: query, required: true, schema: { type: integer } }
+        - { name: from, in: query, required: true, schema: { type: string } }
+        - { name: to, in: query, required: true, schema: { type: string } }
+        - { name: class, in: query, required: true, schema: { type: string } }
+        - { name: quota, in: query, schema: { type: string } }
+        - { name: passengers, in: query, schema: { type: integer } }
+      responses:
+        '200':
+          description: Simulated fare breakdown
+  /availability/check:
+    get:
+      summary: Development availability check (NOT official IRCTC inventory)
+      tags: [Availability]
+      parameters:
+        - { name: trainId, in: query, required: true, schema: { type: integer } }
+        - { name: from, in: query, required: true, schema: { type: string } }
+        - { name: to, in: query, required: true, schema: { type: string } }
+        - { name: date, in: query, required: true, schema: { type: string, format: date } }
+        - { name: class, in: query, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Simulated availability status
+  /bookings/pnr/{pnr}:
+    get:
+      summary: PNR status lookup
+      tags: [Bookings]
+      parameters:
+        - { name: pnr, in: path, required: true, schema: { type: string } }
+      responses:
+        '200':
+          description: Booking and passenger status
+        '404':
+          description: PNR not found
+  /admin/data-import/status:
+    get:
+      summary: Master data import provenance and counts
+      tags: [Admin]
+      security: [{ AuthToken: [] }]
+      responses:
+        '200':
+          description: Latest imports and master-data counts
+  /admin/trains:
+    get:
+      summary: Paginated admin train list
+      tags: [Admin]
+      security: [{ AuthToken: [] }]
+      parameters:
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+        - { name: pageSize, in: query, schema: { type: integer, default: 25 } }
+        - { name: search, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: Paginated trains
+  /admin/stations:
+    get:
+      summary: Paginated admin station list
+      tags: [Admin]
+      security: [{ AuthToken: [] }]
+      parameters:
+        - { name: page, in: query, schema: { type: integer, default: 1 } }
+        - { name: pageSize, in: query, schema: { type: integer, default: 50 } }
+        - { name: search, in: query, schema: { type: string } }
+      responses:
+        '200':
+          description: Paginated stations
+components:
+  securitySchemes:
+    AuthToken:
+      type: apiKey
+      in: header
+      name: x-auth-token

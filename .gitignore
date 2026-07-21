@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build / cache
+dist/
+build/
+.cache/
+coverage/
+.tools/
+
+# SQL Server local files
+*.mdf
+*.ldf
+
+# Large railway raw datasets (place locally, do not commit)
+data/railway/raw/**
+data/railway/archive/**
+!data/railway/raw/.gitkeep
+!data/railway/archive/.gitkeep

@@ -1,0 +1,23 @@
+{
+  "name": "railyatra",
+  "version": "2.0.0",
+  "description": "RailYatra — Indian railway reservation system with React + SQL Server",
+    "private": true,
+    "scripts": {
+        "install:all": "npm install --prefix backend && npm install --prefix client",
+        "client:dev": "npm run dev --prefix client",
+        "client:build": "npm run build --prefix client",
+        "db:sync": "npm run db:sync --prefix backend",
+        "db:seed": "npm run db:seed --prefix backend",
+        "db:setup": "npm run db:setup --prefix backend",
+        "db:migrate-master": "npm run db:migrate-master --prefix backend",
+        "db:backfill-running-days": "npm run db:backfill-running-days --prefix backend",
+        "import:railway": "npm run import:railway --prefix backend",
+        "import:datameet": "npm run import:datameet --prefix backend",
+        "download:railway": "npm run download:railway --prefix backend",
+        "fix:driver": "npm run fix:driver --prefix backend",
+        "dev": "npm run dev --prefix backend",
+        "start": "node scripts/start.js",
+        "test": "npm run test --prefix backend"
+    }
+}

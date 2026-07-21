@@ -1,0 +1,9 @@
+# trainNumber,trainName,trainTypeCode,sourceCode,destCode,runningDays,departureTime,arrivalTime,duration,distance,basePrice,availableSeats
+12951,Mumbai Rajdhani,RAJ,NDLS,BCT,Daily,16:55,08:35,15h 40m,1384,2500,120
+12301,Howrah Rajdhani,RAJ,NDLS,HWH,Daily,16:55,10:05,17h 10m,1447,2200,100
+12627,Karnataka Express,EXP,NDLS,SBC,Mon Wed Fri,20:20,06:40,34h 20m,2365,1800,150
+12740,Vande Bharat Express,VB,NDLS,LKO,Daily,06:10,10:35,4h 25m,512,1650,80
+12124,Deccan Queen,EXP,CSMT,PUNE,Daily,07:15,10:30,3h 15m,192,450,200
+12276,Kanpur Shatabdi,SHAT,NDLS,CNB,Daily,15:50,20:45,4h 55m,441,980,110
+12432,Bhopal Shatabdi,SHAT,NDLS,BPL,Daily,06:00,14:25,8h 25m,707,1350,95
+10001,Development Spec Train,EXP,DEVA,DEVE,Daily,22:00,06:00,8h 0m,400,500,100

@@ -1,0 +1,733 @@
+{
+  "source": "DataMeet Indian Railways JSON (CC0)",
+  "importedAt": "2026-07-20T13:56:24.617Z",
+  "sourceMeta": {
+    "name": "DataMeet Indian Railways JSON (CC0)",
+    "url": "https://github.com/datameet/railways",
+    "publisher": "DataMeet Community (compiled from public railway sources)",
+    "licenseNotes": "CC0 — NOT official Ministry of Railways current timetable. Potentially outdated (~2016). Running days not included in source.",
+    "datasetDate": "2016-08 (approx, see datameet blog)",
+    "potentiallyOutdated": true,
+    "completeness": "PARTIAL — reservation-style trains; no platforms; no running days; no per-stop distance"
+  },
+  "counts": {
+    "inserted": 436711,
+    "updated": 108,
+    "skipped": 0,
+    "failed": 116
+  },
+  "details": {
+    "stations": {
+      "inserted": 8964,
+      "updated": 18,
+      "skipped": 0,
+      "failed": 8
+    },
+    "trains": {
+      "inserted": 5181,
+      "updated": 26,
+      "skipped": 0,
+      "failed": 1
+    },
+    "trainClasses": {
+      "inserted": 5601,
+      "updated": 64,
+      "skipped": 0,
+      "failed": 0
+    },
+    "stops": {
+      "inserted": 416965,
+      "updated": 0,
+      "skipped": 0,
+      "failed": 107
+    }
+  },
+  "errors": [
+    {
+      "entity": "stations",
+      "code": "MUQ",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'city'. Truncated value: 'Nagappattinam - Trichy - Karur- Coimbatore - Mettupalayam - Ooty - Gundlupet Roa'."
+    },
+    {
+      "entity": "stations",
+      "code": "MKY",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'city'. Truncated value: 'Nagappattinam - Trichy - Karur- Coimbatore - Mettupalayam - Ooty - Gundlupet Roa'."
+    },
+    {
+      "entity": "stations",
+      "code": "PGN",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'city'. Truncated value: 'Nagappattinam - Trichy - Karur- Coimbatore - Mettupalayam - Ooty - Gundlupet Roa'."
+    },
+    {
+      "entity": "stations",
+      "code": "TCT",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'city'. Truncated value: 'Musiri - Kulithalai - Manapparai - Pudukottai - Alangudi - Peravoorani - Sethuba'."
+    },
+    {
+      "entity": "stations",
+      "code": "KOQ",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'city'. Truncated value: 'Nagappattinam - Trichy - Karur- Coimbatore - Mettupalayam - Ooty - Gundlupet Roa'."
+    },
+    {
+      "entity": "stations",
+      "code": "TMU",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'city'. Truncated value: 'Nagappattinam - Trichy - Karur- Coimbatore - Mettupalayam - Ooty - Gundlupet Roa'."
+    },
+    {
+      "entity": "stations",
+      "code": "YAKUT PUR(YKA",
+      "msg": "[Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated in table 'RailwayReservation.dbo.Stations', column 'code'. Truncated value: 'YAKUT PUR('."
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16861",
+      "stationCode": "TCT",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16865",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16865",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16865",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16865",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16865",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16862",
+      "stationCode": "TCT",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56891",
+      "stationCode": "TCT",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16787",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16787",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16787",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56847",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56847",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56847",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56894",
+      "stationCode": "TCT",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17315",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17315",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17315",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17315",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17315",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56842",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56842",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56842",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16176",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16176",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56852",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56852",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56714",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56714",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16231",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16231",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16231",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "58718",
+      "stationCode": "P",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "58717",
+      "stationCode": "P",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16866",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16866",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16866",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16866",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16866",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16107",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16107",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16107",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12690",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12690",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12690",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12654",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12654",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12654",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16318-Slip",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16318-Slip",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16318-Slip",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56848",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56848",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56848",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16175",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16175",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "57326",
+      "stationCode": "YAKUT PUR(YKA",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "57325",
+      "stationCode": "YAKUT PUR(YKA",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16688-Slip",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16688-Slip",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16688-Slip",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12083",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12083",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12083",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12084",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12084",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12084",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56843",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56843",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56843",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56713",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56713",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56844",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56844",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56844",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56851",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56851",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12653",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12653",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12653",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56893",
+      "stationCode": "TCT",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16108",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16108",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16108",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56712",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56712",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17316",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17316",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17316",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17316",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "17316",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56711",
+      "stationCode": "KOQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56711",
+      "stationCode": "TMU",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56841",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56841",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56841",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "56892",
+      "stationCode": "TCT",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "47176",
+      "stationCode": "YAKUT PUR(YKA",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16788",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16788",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16788",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12689",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12689",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "12689",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16232",
+      "stationCode": "MUQ",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16232",
+      "stationCode": "PGN",
+      "msg": "Unknown station"
+    },
+    {
+      "entity": "stops",
+      "trainNumber": "16232",
+      "stationCode": "MKY",
+      "msg": "Unknown station"
+    }
+  ],
+  "warnings": [
+    "Running days NOT present in datameet source — day-of-week filter disabled for these trains",
+    "Per-stop distance NOT in source — distanceKm left null on stops",
+    "Platform numbers NOT in source — platformHint null",
+    "Dataset is PARTIAL and POTENTIALLY OUTDATED (~2016 compilation)",
+    "Deactivated 0 trains not from this import source"
+  ],
+  "platformsAvailable": 0,
+  "platformsMissing": 417080
+}

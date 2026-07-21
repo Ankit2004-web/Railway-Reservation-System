@@ -1,0 +1,25 @@
+# code,name,city,state,latitude,longitude,isJunction
+NDLS,New Delhi,New Delhi,Delhi,28.644800,77.216721,1
+CSMT,Mumbai CSMT,Mumbai,Maharashtra,18.940000,72.835000,1
+HWH,Howrah Junction,Kolkata,West Bengal,22.580000,88.340000,1
+SBC,Bengaluru City,Bengaluru,Karnataka,12.976700,77.575000,1
+MAS,Chennai Central,Chennai,Tamil Nadu,13.082700,80.270700,1
+PNBE,Patna Junction,Patna,Bihar,25.600000,85.130000,1
+LKO,Lucknow NR,Lucknow,Uttar Pradesh,26.850000,80.950000,1
+JP,Jaipur Junction,Jaipur,Rajasthan,26.920000,75.780000,1
+ADI,Ahmedabad Junction,Ahmedabad,Gujarat,23.020000,72.570000,1
+BCT,Mumbai Central,Mumbai,Maharashtra,18.970000,72.820000,1
+SC,Secunderabad Junction,Hyderabad,Telangana,17.440000,78.500000,1
+PUNE,Pune Junction,Pune,Maharashtra,18.530000,73.870000,1
+CNB,Kanpur Central,Kanpur,Uttar Pradesh,26.450000,80.330000,1
+BPL,Bhopal Junction,Bhopal,Madhya Pradesh,23.260000,77.400000,1
+VSKP,Visakhapatnam,Visakhapatnam,Andhra Pradesh,17.720000,83.320000,1
+GWL,Gwalior Junction,Gwalior,Madhya Pradesh,26.210000,78.180000,0
+JHS,Jhansi Junction,Jhansi,Uttar Pradesh,25.450000,78.570000,1
+NGP,Nagpur Junction,Nagpur,Maharashtra,21.150000,79.090000,1
+BBS,Bhubaneswar,Bhubaneswar,Odisha,20.270000,85.840000,0
+DEVA,Dev Station Alpha,Dev City Alpha,Development Test Region,20.000000,77.000000,0
+DEVB,Dev Station Beta,Dev City Beta,Development Test Region,21.000000,78.000000,0
+DEVC,Dev Station Gamma,Dev City Gamma,Development Test Region,22.000000,79.000000,0
+DEVD,Dev Station Delta,Dev City Delta,Development Test Region,23.000000,80.000000,0
+DEVE,Dev Station Epsilon,Dev City Epsilon,Development Test Region,24.000000,81.000000,0
