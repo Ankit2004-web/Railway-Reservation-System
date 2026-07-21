@@ -54,7 +54,7 @@ async function processPayment(booking, options = {}) {
                 key: orderData.key,
                 amount: orderData.amount,
                 currency: orderData.currency,
-                name: 'Railway Reservation',
+                name: 'RailYatra',
                 description: `Booking #${booking.id}`,
                 order_id: orderData.orderId,
                 handler: async (response) => {

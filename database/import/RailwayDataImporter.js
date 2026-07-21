@@ -15,7 +15,7 @@ class RailwayDataImporter {
         this.dataDir = options.dataDir || path.join(__dirname, '../../data/railway/processed');
         this.sourceName = options.sourceName || 'Development Dataset';
         this.sourceUrl = options.sourceUrl || null;
-        this.publisher = options.publisher || 'Railway Reservation System (Development)';
+        this.publisher = options.publisher || 'RailYatra (Development)';
         this.licenseNotes = options.licenseNotes || 'DEVELOPMENT / TEST DATA — NOT official Indian Railways data';
         this.report = {
             source: this.sourceName,

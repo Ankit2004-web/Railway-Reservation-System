@@ -1,5 +1,5 @@
 /**
- * Shared UI utilities for Railway Reservation System
+ * Shared UI utilities for RailYatra
  */
 const UI = (() => {
     let confirmResolve = null;

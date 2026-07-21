@@ -89,7 +89,7 @@ app.get('/api/swagger', (req, res) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Railway Reservation API — Swagger UI</title>
+    <title>RailYatra API — Swagger UI</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css">
     <style>body { margin: 0; } .topbar { display: none; }</style>
 </head>

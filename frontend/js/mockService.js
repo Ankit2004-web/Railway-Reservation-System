@@ -491,7 +491,7 @@ const MockService = (() => {
 <style>body{font-family:Inter,sans-serif;padding:24px;color:#183642}h1{color:#20B8BE}.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
 table{width:100%;border-collapse:collapse;margin-top:16px}th,td{border:1px solid #DCE7E9;padding:8px;text-align:left}th{background:#F0FCFC}
 .footer{margin-top:24px;font-size:12px;color:#526A73}</style></head><body>
-<img src="/assets/logo.png" alt="Railway" height="48"><h1>Railway Reservation — E-Ticket</h1>
+<img src="/assets/logo.png" alt="RailYatra" height="48"><h1>RailYatra — E-Ticket</h1>
 <p><strong>PNR:</strong> ${booking.pnrNumber} &nbsp; <strong>Status:</strong> ${booking.status}</p>
 <div class="meta"><div><strong>Train:</strong> ${train.trainName} (${train.trainNumber})</div>
 <div><strong>Date:</strong> ${booking.journeyDate}</div><div><strong>From:</strong> ${train.source} (${train.departureTime})</div>

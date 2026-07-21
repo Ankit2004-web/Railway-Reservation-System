@@ -24,7 +24,7 @@ const sendPasswordResetEmail = async ({ to, resetUrl }) => {
     await transporter.sendMail({
         from: process.env.SMTP_FROM || process.env.SMTP_USER,
         to,
-        subject: 'Railway Reservation - Password Reset',
+        subject: 'RailYatra - Password Reset',
         html: `
             <p>You requested a password reset.</p>
             <p><a href="${resetUrl}">Reset your password</a></p>

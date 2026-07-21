@@ -1,7 +1,7 @@
 {
     "name": "railway-reservation-backend",
     "version": "1.0.0",
-    "description": "Railway Reservation System API with SQL Server",
+    "description": "RailYatra API with SQL Server",
     "main": "server.js",
     "scripts": {
         "start": "node ../scripts/start.js",

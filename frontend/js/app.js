@@ -286,14 +286,14 @@ function showPage(page) {
     document.querySelector(`#navbar a[data-page="${page}"]`)?.classList.add('active');
     currentPage = page;
     document.title = {
-        home: 'Railway | Search & Book Trains',
-        dashboard: 'Dashboard | Railway',
-        trains: 'Search Results | Railway',
-        pnr: 'PNR Status | Railway',
-        bookings: 'My Bookings | Railway',
-        profile: 'My Profile | Railway',
-        confirmation: 'Booking Confirmed | Railway'
-    }[page] || 'Railway Reservation';
+        home: 'RailYatra | Search & Book Trains',
+        dashboard: 'Dashboard | RailYatra',
+        trains: 'Search Results | RailYatra',
+        pnr: 'PNR Status | RailYatra',
+        bookings: 'My Bookings | RailYatra',
+        profile: 'My Profile | RailYatra',
+        confirmation: 'Booking Confirmed | RailYatra'
+    }[page] || 'RailYatra';
     loadPageData(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }

@@ -5,24 +5,20 @@
 ## Project Structure
 
 ```
-├── backend/
+├── client/              # React 19 + Vite frontend (primary UI)
+│   ├── public/          # Static assets (logo, banners)
+│   └── src/             # Pages, components, styles
+├── backend/             # Node.js + Express API
 │   ├── middleware/      # Auth, admin, validation
 │   ├── repositories/    # Data access layer
 │   ├── routes/          # API endpoints
-│   ├── validators/      # Request validation
+│   ├── services/        # Business logic
 │   └── server.js
-├── database/
-│   ├── bootstrap.js     # Env + module loader
-│   ├── connection.js    # SQL Server connection
-│   ├── schema.sql       # Table definitions
-│   ├── seed.js          # Seed script
-│   ├── seedData.js      # Initial stations & trains
-│   └── sync.js          # Database sync script
-├── frontend/
-│   ├── css/
-│   ├── js/
-│   └── *.html
-├── .gitignore
+├── database/            # SQL Server schema, seeds, imports
+├── frontend/            # Legacy vanilla HTML UI (optional)
+├── data/railway/        # Processed railway master datasets
+├── docs/                # OpenAPI spec and data docs
+├── scripts/             # Startup and utility scripts
 ├── package.json
 └── README.md
 ```

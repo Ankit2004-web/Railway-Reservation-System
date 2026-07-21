@@ -19,7 +19,7 @@ const generateTicketPdf = (booking) => new Promise((resolve, reject) => {
 
     const train = booking.train || {};
 
-    doc.fontSize(20).fillColor('#0056b3').text('Railway Reservation System', { align: 'center' });
+    doc.fontSize(20).fillColor('#0056b3').text('RailYatra', { align: 'center' });
     doc.moveDown(0.3);
     doc.fontSize(14).fillColor('#333').text('E-Ticket / Journey Confirmation', { align: 'center' });
     doc.moveDown(1);

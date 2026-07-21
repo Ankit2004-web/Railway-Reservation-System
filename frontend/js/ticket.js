@@ -55,7 +55,7 @@ function renderTicket(container, booking) {
     container.innerHTML = `
         <article class="ticket-card">
             <div class="ticket-card-header">
-                <img src="/assets/logo.png" alt="Railway" height="40" style="margin-bottom:12px">
+                <img src="/assets/logo.png" alt="RailYatra" height="40" style="margin-bottom:12px">
                 <h1>Electronic Reservation Slip (E-Ticket)</h1>
                 <div class="ticket-pnr tabular-nums">${UI.escapeHTML(booking.pnrNumber)}</div>
                 <p style="margin:8px 0 0;opacity:0.85">Status: ${UI.escapeHTML(booking.status)}</p>

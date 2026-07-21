@@ -240,7 +240,7 @@ const Dashboard = (() => {
         });
         const titleEl = document.getElementById('dash-page-title');
         if (titleEl) titleEl.textContent = PAGE_TITLES[page] || 'Dashboard';
-        document.title = `${PAGE_TITLES[page] || 'Dashboard'} | Railway`;
+        document.title = `${PAGE_TITLES[page] || 'Dashboard'} | RailYatra`;
         loadPageData(page);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
